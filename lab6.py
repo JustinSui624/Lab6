@@ -36,7 +36,4 @@ while True:
         print("The encoded password is", password, "and the original password is", decoded_password + ".")
     elif option==3:
         break
-        
 
-
-# In[ ]:
