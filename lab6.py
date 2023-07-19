@@ -1,10 +1,4 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[23]:
-
-
-#anhelina liashynska
+#Justin Sui
 def menu():
     print()
     print('Menu')
