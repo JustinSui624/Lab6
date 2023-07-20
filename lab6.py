@@ -15,6 +15,12 @@ def encode(user_password):
         password.append(s)
         
     return password
+def decode(password):
+    decoded = ''
+    for i in range(len(password)):
+        decoded += str((int(password[i])-3) % 10)
+    return decoded
+
     
 while True:
     menu()
