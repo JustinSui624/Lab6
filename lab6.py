@@ -6,24 +6,24 @@ def menu():
     print('1.Encode')
     print('2.Decode')
     print('3.Quit')
-    
-    
-def encode(user_password):
-    count = 0
-    encoded_pass = ''
-    while count < len(user_password):
-        if int(user_password[count]) > 7:
-            encoded_pass += str(int(user_password[count]) + 3)
-            count += 1
-        elif int(user_password[count]) == 7:
-            encoded_pass += "0"
-        elif int(user_password[count]) == 8:
-            encoded_pass += "1"
-        elif int(user_password[count]) == 9:
-            encoded_pass += "2"
-    return encoded_pass
 
-    
+
+def encode(user_password):
+    password = []
+    for i in iter(str(user_password)):
+        s = int(i) + 3
+        password.append(s)
+
+    return password
+
+def decode(password):
+    decoded = ''
+    for i in range(len(password)):
+        decoded += str((int(password[i])-3) % 10)
+    return decoded
+
+
+
 while True:
     menu()
     option = int(input("Please enter an option: "))
@@ -33,7 +33,8 @@ while True:
         print('Your password has been encoded and stored!')
     elif option==2:
         decoded_password = decode(password)
-        print("The encoded password is", password, "and the original password is", decoded_password + ".")
+        password1 = ''.join(str(x) for x in password)
+        print("The encoded password is", password1, "and the original password is", decoded_password + ".")
     elif option==3:
         break
 
